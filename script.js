@@ -17,7 +17,7 @@ var Carousel = (function () {
         currentPos: 0,
         rotation: 0,
         targetRotation: 0,
-        rotationSpeed: 0.5,
+        rotationSpeed: 0.2,
         autoRotate: true,
         snap: true,
         isDragging: false,
@@ -282,7 +282,7 @@ var Carousel = (function () {
             .name("Radius Space")
             .onChange(renderCarousel);
 
-        gui.add(state, "rotationSpeed", 0.1, 2, 0.1)
+        gui.add(state, "rotationSpeed", 0.05, 2, 0.1)
             .name("Drag Speed");
 
         gui.add(state, "autoRotate")
@@ -317,23 +317,6 @@ var Carousel = (function () {
         }
     }
 
-    function handleWheel(e) {
-        // Prevent default to avoid page scrolling
-        e.preventDefault();
-        
-        // Kill any ongoing tweens
-        gsap.killTweensOf(state);
-        state.isSpinning = false;
-
-        // Base speed factor for wheel
-        var wheelSpeed = 0.05;
-        var speedFactor = 15 / state.totalCards;
-        
-        state.velocity = e.deltaY * wheelSpeed * state.rotationSpeed * speedFactor;
-        state.rotation += state.velocity;
-        updateContainerTransform();
-    }
-
     // -------------------------
     // Init
     // -------------------------
@@ -357,7 +340,6 @@ var Carousel = (function () {
         window.addEventListener("touchstart", handleDragStart, { passive: false });
         window.addEventListener("touchmove", handleDragMove, { passive: false });
         window.addEventListener("touchend", handleDragEnd);
-        window.addEventListener("wheel", handleWheel, { passive: false });
 
         window.addEventListener("resize", renderCarousel);
 
