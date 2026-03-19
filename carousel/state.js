@@ -29,8 +29,8 @@ export var state = {
 };
 
 export var spinParams = {
-    spinsMin:               2,
-    spinsMax:               3,
+    spinsMin:               1,
+    spinsMax:               2,
     dramaticLoopChance:     0.20,
 
     durationMin:            6,
