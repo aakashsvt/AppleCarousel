@@ -61,9 +61,9 @@ html {
     position: absolute;
     top: 115%;
     left: 50%;
-    transform: translateX(-50%);
     border-radius: 999px;
     z-index: 100;
+    transform: translateX(-50%) translateZ(10px);
 }
 
 #carousel figure img {
