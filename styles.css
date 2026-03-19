@@ -8,14 +8,14 @@ body,
 html {
     width: 100%;
     height: 100%;
-    background-color: #050510;
+    background-color: rgba(167, 223, 245, 1);
     overflow: hidden;
     font-family: sans-serif;
 }
 
 .wrapper {
-    width: 100%;
-    height: 100%;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,10 +23,12 @@ html {
 }
 
 #container {
-    width: 300px;
-    height: 400px;
+    width: 240px;
+    aspect-ratio: 164 / 240;
     position: relative;
     transform-style: preserve-3d;
+    position: absolute;
+    top: 14%;
 }
 
 #carousel {
@@ -43,18 +45,21 @@ html {
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    font-size: 80px;
-    font-weight: bold;
-    color: white;
+    border-radius: 40px;
     user-select: none;
-    cursor: grab;
-    /* Gradient requested */
-    /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    background-color: transparent;
+    aspect-ratio: 164 / 240;
+    transform-origin: center center;
+}
+
+#carousel figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    aspect-ratio: 164 / 240;
 }
 
 #carousel.backface figure {
@@ -65,25 +70,49 @@ html {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 820px) {
+    #carousel figure {
+        border-radius: 28px;
+    }
+
+    #container {
+        width: 220px;
+    }
+}
+
 @media (max-width: 768px) {
     #container {
         width: 220px;
-        height: 300px;
-    }
-
-    #carousel figure {
-        font-size: 50px;
     }
 }
 
 @media (max-width: 480px) {
     #container {
-        width: 180px;
-        height: 250px;
+        width: 150px;
+    }
+
+    #container {
+        top: 17%;
     }
 
     #carousel figure {
-        font-size: 40px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    #container {
+        width: 155px;
+    }
+
+    #carousel figure {
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    #container {
+        width: 135px;
     }
 }
 
