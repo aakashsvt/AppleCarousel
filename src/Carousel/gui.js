@@ -1,3 +1,4 @@
+import GUI from 'lil-gui';
 import { state } from './state.js';
 import { goToCard } from './spin.js';
 import { rebuildCards } from './cards.js';
@@ -11,7 +12,7 @@ import { addCSSClass, removeCSSClass, debounce } from './utils.js';
 export function setupGUI() {
     if (state.gui) state.gui.destroy();
 
-    var gui   = new lil.GUI({ title: "Carousel Controls" });
+    var gui   = new GUI({ title: "Carousel Controls" });
     state.gui = gui;
 
     gui.add(state, "totalCards", 2, 17, 1).name("Total Cards").onChange(function (val) {

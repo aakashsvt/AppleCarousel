@@ -1,6 +1,7 @@
 import { state } from './state.js';
 import { syncPosFromRotation, syncRotationFromPos } from './sync.js';
 import { updateContainerTransform } from './layout.js';
+import gsap from 'gsap';    
 
 // -------------------------
 // Animation Loop

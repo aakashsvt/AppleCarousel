@@ -1,7 +1,7 @@
 import { state } from './state.js';
 import { syncPosFromRotation } from './sync.js';
 import { updateContainerTransform } from './layout.js';
-
+import gsap from 'gsap';
 // -------------------------
 // Interaction
 // -------------------------
