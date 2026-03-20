@@ -148,5 +148,14 @@ html {
 /* Hide lil-gui on mobile if needed, or keep it */
 .lil-gui {
     width: 250px;
-    /* height: 242px; */
 }
+
+
+.lil-gui.autoPlace {
+    position: absolute;
+    right: 0% !important;
+    max-height: auto;
+    top: 100%;
+    transform: translateY(-100%);
+}
+

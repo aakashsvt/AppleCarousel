@@ -30,7 +30,7 @@ export var state = {
 
 export var spinParams = {
     spinsMin:               1,
-    spinsMax:               2,
+    spinsMax:               1,
     dramaticLoopChance:     0.20,
 
     durationMin:            6,
